@@ -1,0 +1,62 @@
+1. 
+Compile time is a time where the source code which is human readable is converted into bytecode or class file. Which checks the syntax of a program and is done by compiler with command javac.
+	Run time is a time where bytecode or class file starts executing.
+
+2. 
+i.  Local variables:These variables are declared inside a scope of method or loops.These are only accessed by that scope only.
+	The below Ex. is having local variable inside the method i.e. 'theItem'. this variable is only accessedby that method only and it is having String type here and we can use other types too.
+	Ex: public class Box{
+			public static void main(String[] value){
+				public static void keeping(){
+					String theItem="Chocolate";
+					System.out.println("Item is: "+theItem);
+				}
+			}
+		}
+ii. Class variable: These variable are declared at class level and are accessed by all methods inside the class.The class variables are also called Field.
+	The below Ex. is having Field having variable name item with type char, and we can use any type.Here we have used the variable in both the methods. 
+	Ex:public class Alpha{
+			public static char item='M';
+			public static void main(String[] value){
+				public static void letter(){
+				System.out.println("The letter is: "+item);
+				}
+				public static void letter(){
+				char item1=item.concat('P');
+				System.out.println("The letter is: "+item1);
+				}
+			}
+		}
+iii.Final variable: These variables are used for constatnt value i.e the reinitialisation is not possible.
+	Ex: public class Usn{
+			public static void main(String[] value){
+				public static void keeping(){
+					final String usn="2ka16ec026";
+					System.out.println("USN is: "+usn);
+				}
+			}
+		}
+		
+4.
+Method: Method performs Task which is having Set of executable statements or code used to write logic,Which allows to-reuse statements and executes at runtime.
+parameter: Parameter is a variable used to declare a value to method during compile-time.
+argument: Values which we pass during runtime are arguments.
+returntype: Retuen type is used to define a datatype of the method. If the method wants to return value then we need to use datatypes
+
+	Ex: public class Box{
+			public static void main(String[] nm){
+				String argName=nm[0];
+				String name=myName();
+				System.out.println("My name is: "+name);
+			}
+			public static String myName(){
+				String mname="Madhu";
+				return mname;
+				}
+		}
+	In above Ex. myName() is a method to write a name where statement which is to be executed is there.
+				nm[0] is declaring argument and the value shoud be passed at runtime.
+				mname will return the value useg keyword return.
+
+5.
+Encapsulation prevents accessing of one class properties to other class. Which is achieved by access specifier private
