@@ -27,28 +27,6 @@ public class AirportDAOImpl implements AirportDAO {
 	}
 
 	@Override
-	public void add(String name) {
-		System.out.println("Invoked add with String type");
-		/*
-		 * if(name!=null){
-		 * System.out.println("name is not null, can add to lists");
-		 * lists.add(name); System.out.println(name); }else{
-		 * System.out.println("name is not null"); }
-		 */
-
-	}
-
-	private boolean name(String name) {
-		for (AirportDTO airportDTO : lists) {
-			if (airportDTO.getPlane().equals(name)) {
-				System.out.println("plane is already in list");
-				return true;
-			}
-		}
-		return false;
-	}
-
-	@Override
 	public void update(String name, String startPoint) {
 
 		System.out.println("invoked update");
@@ -67,8 +45,6 @@ public class AirportDAOImpl implements AirportDAO {
 
 	}
 
-	
-
 	@Override
 	public void delete(String name) {
 		System.out.println("invoked delete");
@@ -81,6 +57,41 @@ public class AirportDAOImpl implements AirportDAO {
 					iterator.remove();
 				}
 			}
+		}
+
+	}
+
+	@Override
+	public boolean multipleAdd(List<AirportDTO> lists) {
+		System.out.println("invoked multipleAdd");
+
+		return this.lists.addAll(lists);
+
+	}
+
+	@Override
+	public void getAll() {
+
+		System.out.println("invoked getAll");
+		System.out.println(this.lists);
+
+	}
+
+	@Override
+	public void displayByName(String name) {
+		System.out.println("invoked displayByName");
+		if (name != null) {
+			for (AirportDTO airportDTO : lists) {
+				String planeName = airportDTO.getPlane();
+				if(planeName.equals(name)){
+					System.out.println(airportDTO);
+				}else{
+					System.out.println("names are not equal");
+				}
+				
+			}
+		}else{
+			System.out.println("name is null");
 		}
 
 	}
